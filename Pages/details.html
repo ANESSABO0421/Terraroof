@@ -1,0 +1,1504 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Traditional Terracotta Odu | TERRAROOF</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ===== CSS VARIABLES ===== */
+      :root {
+        --error: #ba1a1a;
+        --on-primary-container: #fffbff;
+        --on-secondary-fixed-variant: #5d4037;
+        --tertiary-fixed: #e4e4cc;
+        --on-primary-fixed: #390c00;
+        --surface-container: #f0eded;
+        --inverse-primary: #ffb59c;
+        --on-secondary: #ffffff;
+        --primary: #9a401e;
+        --surface-tint: #9d4220;
+        --tertiary-container: #757662;
+        --error-container: #ffdad6;
+        --primary-fixed-dim: #ffb59c;
+        --surface-dim: #dcd9d9;
+        --on-secondary-container: #795950;
+        --surface-container-lowest: #ffffff;
+        --surface: #fbf9f8;
+        --on-tertiary-container: #fefee5;
+        --tertiary: #5c5d4a;
+        --surface-variant: #e4e2e1;
+        --surface-bright: #fbf9f8;
+        --on-primary: #ffffff;
+        --secondary-container: #fed3c7;
+        --on-secondary-fixed: #2c160e;
+        --on-tertiary: #ffffff;
+        --inverse-surface: #303030;
+        --secondary: #77574d;
+        --on-surface: #1b1c1c;
+        --outline-variant: #dcc1b8;
+        --surface-container-highest: #e4e2e1;
+        --on-tertiary-fixed: #1b1d0e;
+        --inverse-on-surface: #f3f0f0;
+        --secondary-fixed: #ffdbd0;
+        --primary-fixed: #ffdbcf;
+        --on-primary-fixed-variant: #7e2c0a;
+        --on-error-container: #93000a;
+        --secondary-fixed-dim: #e7bdb1;
+        --on-background: #1b1c1c;
+        --on-surface-variant: #56423c;
+        --background: #fbf9f8;
+        --primary-container: #ba5834;
+        --tertiary-fixed-dim: #c8c8b0;
+        --on-tertiary-fixed-variant: #474836;
+        --surface-container-high: #eae8e7;
+        --outline: #89726b;
+        --surface-container-low: #f6f3f2;
+        --on-error: #ffffff;
+
+        --gutter: 24px;
+        --base: 8px;
+        --margin-mobile: 20px;
+        --stack-md: 32px;
+        --stack-sm: 16px;
+        --stack-lg: 64px;
+        --margin-desktop: 80px;
+        --container-max: 1280px;
+
+        --radius: 0.25rem;
+        --radius-lg: 0.5rem;
+        --radius-xl: 0.75rem;
+        --radius-full: 9999px;
+      }
+
+      /* ===== RESET & BASE ===== */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background: var(--surface);
+        color: var(--on-surface);
+        font-family: "Inter", sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        font-weight: 400;
+      }
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      button {
+        cursor: pointer;
+        border: none;
+        background: none;
+        font-family: inherit;
+      }
+      input,
+      textarea {
+        font-family: inherit;
+        outline: none;
+      }
+
+      /* ===== TYPOGRAPHY ===== */
+      .headline-xl {
+        font-family: "Montserrat", sans-serif;
+        font-size: 64px;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+      }
+      .headline-lg {
+        font-family: "Montserrat", sans-serif;
+        font-size: 48px;
+        line-height: 1.2;
+        letter-spacing: -0.01em;
+        font-weight: 700;
+      }
+      .headline-lg-mobile {
+        font-family: "Montserrat", sans-serif;
+        font-size: 32px;
+        line-height: 1.2;
+        font-weight: 700;
+      }
+      .headline-md {
+        font-family: "Montserrat", sans-serif;
+        font-size: 32px;
+        line-height: 1.3;
+        font-weight: 600;
+      }
+      .headline-sm {
+        font-family: "Montserrat", sans-serif;
+        font-size: 24px;
+        line-height: 1.4;
+        font-weight: 600;
+      }
+      .body-lg {
+        font-family: "Inter", sans-serif;
+        font-size: 18px;
+        line-height: 1.6;
+        font-weight: 400;
+      }
+      .body-md {
+        font-family: "Inter", sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        font-weight: 400;
+      }
+      .label-md {
+        font-family: "Inter", sans-serif;
+        font-size: 14px;
+        line-height: 1.2;
+        letter-spacing: 0.05em;
+        font-weight: 600;
+      }
+      .label-sm {
+        font-family: "Inter", sans-serif;
+        font-size: 12px;
+        line-height: 1.2;
+        font-weight: 500;
+      }
+
+      /* ===== LAYOUT ===== */
+      .container {
+        max-width: var(--container-max);
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: var(--margin-desktop);
+        padding-right: var(--margin-desktop);
+      }
+      @media (max-width: 768px) {
+        .container {
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+      }
+
+      /* ===== MATERIAL SYMBOLS ===== */
+      .material-symbols-outlined {
+        font-family: "Material Symbols Outlined";
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+        font-size: 24px;
+        line-height: 1;
+        vertical-align: middle;
+      }
+
+      /* ===== HEADER ===== */
+      header {
+        background: rgba(251, 249, 248, 0.8);
+        backdrop-filter: blur(12px);
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        border-bottom: 1px solid rgba(220, 193, 184, 0.3);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+        transition: transform 0.3s ease;
+      }
+      header.hidden {
+        transform: translateY(-100%);
+      }
+      .header-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px var(--margin-desktop);
+        max-width: var(--container-max);
+        margin: auto;
+      }
+      @media (max-width: 768px) {
+        .header-inner {
+          padding: 16px;
+        }
+      }
+      .logo {
+        font-family: "Montserrat", sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        color: var(--on-surface);
+        text-transform: uppercase;
+      }
+      nav {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+      }
+      nav a {
+        color: var(--on-surface-variant);
+        font-family: "Inter", sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        transition: color 0.2s;
+        text-transform: uppercase;
+      }
+      nav a:hover {
+        color: var(--primary);
+      }
+      nav a.active {
+        color: var(--primary);
+        border-bottom: 2px solid var(--primary);
+        padding-bottom: 4px;
+      }
+      @media (max-width: 768px) {
+        nav {
+          display: none;
+        }
+      }
+      .btn-quote {
+        background: var(--primary);
+        color: var(--on-primary);
+        padding: 12px 24px;
+        border-radius: var(--radius);
+        font-family: "Inter", sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        transition:
+          opacity 0.2s,
+          transform 0.1s;
+      }
+      .btn-quote:hover {
+        opacity: 0.9;
+      }
+      .btn-quote:active {
+        transform: scale(0.95);
+      }
+
+      /* ===== PRODUCT HERO SECTION ===== */
+      .product-hero {
+        max-width: var(--container-max);
+        margin: auto;
+        padding: var(--stack-md) var(--margin-desktop) var(--stack-lg);
+      }
+      @media (max-width: 768px) {
+        .product-hero {
+          padding: var(--stack-md) 16px var(--stack-lg);
+        }
+      }
+      .product-hero-grid {
+        display: grid;
+        grid-template-columns: 7fr 5fr;
+        gap: var(--gutter);
+        align-items: start;
+      }
+      @media (max-width: 1024px) {
+        .product-hero-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Gallery */
+      .gallery-col {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .main-image-wrap {
+        position: relative;
+        aspect-ratio: 4/3;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        background: var(--surface-container);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+      }
+      .main-image-wrap img {
+        transition: opacity 0.5s ease;
+      }
+      .thumb-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+      }
+      .product-gallery-thumb {
+        aspect-ratio: 1;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        border: 2px solid transparent;
+        cursor: pointer;
+        transition:
+          border-color 0.2s,
+          transform 0.2s;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        padding: 0;
+      }
+      .product-gallery-thumb.active {
+        border-color: var(--primary);
+        transform: scale(1.05);
+      }
+
+      /* Content Column */
+      .content-col {
+        display: flex;
+        flex-direction: column;
+        gap: var(--stack-sm);
+        position: sticky;
+        top: 96px;
+      }
+      @media (max-width: 1024px) {
+        .content-col {
+          position: static;
+        }
+      }
+      .badge-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .badge {
+        display: inline-block;
+        background: var(--secondary-container);
+        color: var(--on-secondary-container);
+        padding: 4px 12px;
+        border-radius: var(--radius-full);
+        font-family: "Inter", sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        width: fit-content;
+      }
+      .product-title {
+        font-family: "Montserrat", sans-serif;
+        font-size: 48px;
+        line-height: 1.2;
+        letter-spacing: -0.01em;
+        font-weight: 700;
+        color: var(--on-surface);
+      }
+      @media (max-width: 600px) {
+        .product-title {
+          font-size: 32px;
+        }
+      }
+      .product-desc {
+        color: var(--on-surface-variant);
+        font-family: "Inter", sans-serif;
+        font-size: 18px;
+        line-height: 1.6;
+      }
+
+      /* Variants */
+      .variants-section {
+        padding-top: var(--stack-sm);
+      }
+      .variants-label {
+        font-family: "Inter", sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        color: var(--primary);
+        text-transform: uppercase;
+        margin-bottom: 16px;
+      }
+      .variants-swatches {
+        display: flex;
+        gap: 16px;
+      }
+      .swatch-wrap {
+        cursor: pointer;
+        text-align: center;
+        position: relative;
+      }
+      .swatch {
+        width: 48px;
+        height: 48px;
+        border-radius: var(--radius-full);
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+      .swatch-classic {
+        background: #9a401e;
+        outline: 2px solid #9a401e;
+        outline-offset: 2px;
+      }
+      .swatch-earthy {
+        background: #5d4037;
+        outline: 1px solid var(--outline-variant);
+        outline-offset: 2px;
+      }
+      .swatch-charcoal {
+        background: #303030;
+        outline: 1px solid var(--outline-variant);
+        outline-offset: 2px;
+      }
+      .swatch-sand {
+        background: #e4e4cc;
+        outline: 1px solid var(--outline-variant);
+        outline-offset: 2px;
+      }
+      .swatch-label {
+        font-family: "Inter", sans-serif;
+        font-size: 12px;
+        margin-top: 8px;
+        display: block;
+        opacity: 0;
+        transition: opacity 0.2s;
+      }
+      .swatch-wrap:hover .swatch-label {
+        opacity: 1;
+      }
+
+      /* CTA Buttons */
+      .cta-group {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding-top: 16px;
+      }
+      .btn-primary-full {
+        background: var(--primary);
+        color: var(--on-primary);
+        width: 100%;
+        padding: 16px;
+        border-radius: var(--radius-lg);
+        font-family: "Montserrat", sans-serif;
+        font-size: 24px;
+        font-weight: 600;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        transition: box-shadow 0.2s;
+      }
+      .btn-primary-full:hover {
+        box-shadow: 0 8px 24px rgba(154, 64, 30, 0.3);
+      }
+      .btn-outline-full {
+        border: 1px solid var(--outline);
+        color: var(--on-surface-variant);
+        width: 100%;
+        padding: 16px;
+        border-radius: var(--radius-lg);
+        font-family: "Inter", sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        transition: background 0.2s;
+      }
+      .btn-outline-full:hover {
+        background: var(--surface-container-low);
+      }
+
+      /* ===== SPECS & BENEFITS SECTION ===== */
+      .specs-section {
+        background: var(--surface-container-low);
+        padding: var(--stack-lg) 0;
+        border-top: 1px solid rgba(220, 193, 184, 0.2);
+        border-bottom: 1px solid rgba(220, 193, 184, 0.2);
+      }
+      .specs-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--margin-desktop);
+      }
+      @media (max-width: 1024px) {
+        .specs-grid {
+          grid-template-columns: 1fr;
+          gap: var(--stack-lg);
+        }
+      }
+      .section-title {
+        font-family: "Montserrat", sans-serif;
+        font-size: 32px;
+        line-height: 1.3;
+        font-weight: 600;
+        margin-bottom: 32px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .section-title .material-symbols-outlined {
+        color: var(--primary);
+        font-size: 32px;
+      }
+      .specs-table-wrap {
+        overflow: hidden;
+        border-radius: 12px;
+        border: 1px solid rgba(220, 193, 184, 0.3);
+        background: var(--surface);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: "Inter", sans-serif;
+        font-size: 16px;
+      }
+      tbody tr {
+        border-bottom: 1px solid rgba(220, 193, 184, 0.2);
+        transition: background 0.15s;
+      }
+      tbody tr:last-child {
+        border-bottom: none;
+      }
+      tbody tr:hover {
+        background: var(--surface-container-highest);
+      }
+      th {
+        padding: 16px 24px;
+        font-weight: 600;
+        background: rgba(246, 243, 242, 0.5);
+        width: 50%;
+        text-align: left;
+      }
+      td {
+        padding: 16px 24px;
+      }
+
+      /* Benefits */
+      .benefits-list {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+      .benefit-item {
+        display: flex;
+        gap: 16px;
+      }
+      .benefit-icon {
+        flex-shrink: 0;
+        width: 48px;
+        height: 48px;
+        background: rgba(186, 88, 52, 0.1);
+        border-radius: var(--radius-full);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary);
+        transition:
+          background 0.3s,
+          color 0.3s;
+      }
+      .benefit-item:hover .benefit-icon {
+        background: var(--primary);
+        color: var(--on-primary);
+      }
+      .benefit-title {
+        font-family: "Montserrat", sans-serif;
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 4px;
+      }
+      .benefit-desc {
+        color: var(--on-surface-variant);
+      }
+
+      /* ===== INSTALLATION SECTION ===== */
+      .install-section {
+        max-width: var(--container-max);
+        margin: auto;
+        padding: var(--stack-lg) var(--margin-desktop);
+      }
+      @media (max-width: 768px) {
+        .install-section {
+          padding: var(--stack-lg) 16px;
+        }
+      }
+      .install-card {
+        background: var(--surface);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+        border-radius: 16px;
+        overflow: hidden;
+        display: flex;
+      }
+      @media (max-width: 1024px) {
+        .install-card {
+          flex-direction: column;
+        }
+      }
+      .install-content {
+        flex: 1;
+        padding: 48px 64px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+      @media (max-width: 768px) {
+        .install-content {
+          padding: 32px 24px;
+        }
+      }
+      .install-title {
+        font-family: "Montserrat", sans-serif;
+        font-size: 48px;
+        line-height: 1.2;
+        font-weight: 700;
+      }
+      @media (max-width: 600px) {
+        .install-title {
+          font-size: 32px;
+        }
+      }
+      .install-desc {
+        color: var(--on-surface-variant);
+        font-size: 18px;
+        line-height: 1.6;
+      }
+      .install-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .install-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      .install-list .material-symbols-outlined {
+        color: var(--primary);
+        margin-top: 2px;
+        flex-shrink: 0;
+      }
+      .btn-dark {
+        background: var(--on-surface);
+        color: var(--surface);
+        padding: 16px 32px;
+        border-radius: var(--radius-full);
+        font-family: "Inter", sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        width: fit-content;
+        transition: opacity 0.2s;
+      }
+      .btn-dark:hover {
+        opacity: 0.9;
+      }
+      .install-image {
+        flex: 1;
+        background: var(--surface-dim);
+        position: relative;
+        min-height: 300px;
+      }
+      .install-image img {
+        position: absolute;
+        inset: 0;
+      }
+
+      /* ===== RELATED PRODUCTS ===== */
+      .related-section {
+        background: var(--surface);
+        padding: var(--stack-lg) 0;
+        border-top: 1px solid rgba(220, 193, 184, 0.1);
+      }
+      .related-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 48px;
+      }
+      .related-header h2 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 48px;
+        line-height: 1.2;
+        font-weight: 700;
+      }
+      @media (max-width: 600px) {
+        .related-header h2 {
+          font-size: 32px;
+        }
+      }
+      .related-header p {
+        color: var(--on-surface-variant);
+      }
+      .products-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--gutter);
+      }
+      @media (max-width: 1024px) {
+        .products-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (min-width: 600px) and (max-width: 1024px) {
+        .products-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      .product-card {
+        background: var(--surface-container-low);
+        border-radius: 12px;
+        overflow: hidden;
+        transition:
+          box-shadow 0.5s,
+          border-color 0.5s;
+        border: 1px solid transparent;
+      }
+      .product-card:hover {
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+        border-color: rgba(220, 193, 184, 0.3);
+      }
+      .card-image-wrap {
+        aspect-ratio: 16/10;
+        overflow: hidden;
+      }
+      .card-image-wrap img {
+        transition: transform 0.7s ease;
+      }
+      .product-card:hover .card-image-wrap img {
+        transform: scale(1.1);
+      }
+      .card-content {
+        padding: 24px;
+      }
+      .card-title {
+        font-family: "Montserrat", sans-serif;
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+      .card-desc {
+        color: var(--on-surface-variant);
+        font-size: 16px;
+        line-height: 1.6;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      .card-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 16px;
+        color: var(--primary);
+        font-family: "Inter", sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        transition: gap 0.2s;
+      }
+      .product-card:hover .card-link {
+        gap: 16px;
+      }
+      .card-link .material-symbols-outlined {
+        font-size: 18px;
+      }
+
+      /* ===== INQUIRY FORM SECTION ===== */
+      .inquiry-section {
+        position: relative;
+        padding: var(--stack-lg) 0;
+        background: var(--on-surface);
+        overflow: hidden;
+      }
+      
+      .inquiry-inner {
+        max-width: 800px;
+        margin: auto;
+        padding: 0 16px;
+        position: relative;
+        z-index: 10;
+      }
+      .inquiry-card {
+        background: var(--surface);
+        padding: 48px 64px;
+        border-radius: 24px;
+        box-shadow: 0 25px 80px rgba(0, 0, 0, 0.25);
+      }
+      @media (max-width: 768px) {
+        .inquiry-card {
+          padding: 32px 24px;
+        }
+      }
+      .inquiry-header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .inquiry-header h2 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 48px;
+        line-height: 1.2;
+        font-weight: 700;
+        margin-bottom: 16px;
+      }
+      @media (max-width: 600px) {
+        .inquiry-header h2 {
+          font-size: 32px;
+        }
+      }
+      .inquiry-header p {
+        color: var(--on-surface-variant);
+      }
+      .form {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+      @media (max-width: 600px) {
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+      }
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .form-group label {
+        font-family: "Inter", sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        color: var(--on-surface);
+      }
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid var(--outline-variant);
+        padding: 12px 0;
+        font-family: "Inter", sans-serif;
+        font-size: 16px;
+        color: var(--on-surface);
+        transition: border-color 0.2s;
+        resize: none;
+      }
+      .form-group input::placeholder,
+      .form-group textarea::placeholder {
+        color: var(--outline);
+      }
+      .form-group input:focus,
+      .form-group textarea:focus {
+        border-bottom-color: var(--primary);
+      }
+      .btn-submit {
+        width: 100%;
+        background: var(--primary);
+        color: var(--on-primary);
+        padding: 20px;
+        border-radius: 12px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 24px;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        transition:
+          box-shadow 0.2s,
+          transform 0.1s;
+      }
+      .btn-submit:hover {
+        box-shadow: 0 8px 32px rgba(154, 64, 30, 0.4);
+      }
+      .btn-submit:active {
+        transform: scale(0.98);
+      }
+
+      /* ===== FOOTER ===== */
+      footer {
+        background: var(--surface-container-lowest);
+        border-top: 1px solid rgba(220, 193, 184, 0.3);
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--gutter);
+        padding: var(--stack-lg) var(--margin-desktop);
+        max-width: var(--container-max);
+        margin: 0 auto;
+      }
+      @media (max-width: 1024px) {
+        .footer-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 40px;
+        }
+      }
+      @media (max-width: 640px) {
+        .footer-grid {
+          grid-template-columns: 1fr;
+          gap: 32px;
+          padding: var(--stack-lg) 20px;
+        }
+      }
+      .footer-brand {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .footer-logo {
+        font-family: "Montserrat", sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--on-surface);
+      }
+      .footer-tagline {
+        color: var(--on-surface-variant);
+        font-size: 16px;
+        line-height: 1.6;
+      }
+      .footer-col {
+        display: flex;
+        align-items: start;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .footer-heading {
+        font-family: "Inter", sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--primary);
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+      }
+      .footer-nav {
+        display: flex;
+        align-items: start;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .footer-nav a {
+        color: var(--on-surface-variant);
+        font-family: "Inter", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        transition:
+          color 0.2s,
+          transform 0.2s;
+        display: inline-block;
+      }
+      .footer-nav a:hover {
+        color: var(--primary);
+        transform: translateX(4px);
+      }
+      .footer-contact-text {
+        color: var(--on-surface-variant);
+        font-size: 14px;
+        line-height: 1.7;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(220, 193, 184, 0.15);
+        padding: 28px var(--margin-desktop);
+      }
+      @media (max-width: 640px) {
+        .footer-bottom {
+          padding: 28px 20px;
+        }
+      }
+      .footer-bottom-inner {
+        max-width: var(--container-max);
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      @media (max-width: 640px) {
+        .footer-bottom-inner {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 16px;
+        }
+      }
+      .footer-copy {
+        color: var(--on-surface-variant);
+        font-size: 12px;
+        font-family: "Inter", sans-serif;
+      }
+      .footer-links {
+        display: flex;
+        gap: 28px;
+      }
+      .footer-links a {
+        color: var(--on-surface-variant);
+        font-size: 12px;
+        font-family: "Inter", sans-serif;
+        transition: color 0.2s;
+      }
+      .footer-links a:hover {
+        color: var(--primary);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ===== HEADER ===== -->
+    <header id="site-header">
+      <div class="header-inner">
+        <span class="logo">TerraRoof</span>
+        <nav>
+          <a href="#">Home</a>
+          <a href="#" class="active">Products</a>
+          <a href="#">Process</a>
+          <a href="#">Gallery</a>
+          <a href="#">Contact</a>
+        </nav>
+        <button class="btn-quote">Get a Quote</button>
+      </div>
+    </header>
+
+    <main>
+      <!-- ===== PRODUCT HERO & GALLERY ===== -->
+      <section class="product-hero">
+        <div class="product-hero-grid">
+          <!-- Gallery Column -->
+          <div class="gallery-col">
+            <div class="main-image-wrap">
+              <img
+                id="main-image"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDx-zeICHmZqebejWfwPjjGcHJjkn3Aqv4KVJ5RnC5FzVIM5Fazy60bj6btGOPNuN0f-HCNzJfUuGliOQiSDzwKO9i561G7R2ur540OpAo7uqBMnLrJMN7X1aao5qyNXHd4E3ESuOCHusmPj-95ujSsRRjLfOBNU3-GkQfnPfv7QZhv2JGCavZ4mrel07ivR7f4C4QahDvcg0rqKkkKDFYFjsQu7D-arzt2avAtD2jWrDJhGGXQkChF9AW042yAOH_uxAonhVqfC0zA"
+                alt="Luxury villa with Traditional Terracotta Odu tiles"
+              />
+            </div>
+            <div class="thumb-grid">
+              <button
+                class="product-gallery-thumb active"
+                onclick="updateMainImage(this.querySelector('img').src, this)"
+              >
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwuvotFBXIT_I9cxH5JMKSi3v3p00L69zCRS9BSc22__Eb7b356Dah_exePF_Z2pg1uFdafEmMD6phwWql37deUHHuE2rSEqH0aZmYhpaddYWhVKaMs550RRPDCJ8GVz0J_b13XXhuSqnOzCl1xF-Z4pSzJoVPb2riyKkpF6ARwmL_px1n_kpr5xfTP5GBNbZFlobViAcECCwnHyokYalc3q-E66WxgrDY1JzG9fypxm7_UhUwihUqLgGFm9mQXI2Anj7m6lQvBkag"
+                  alt="Thumbnail 1"
+                />
+              </button>
+              <button
+                class="product-gallery-thumb"
+                onclick="updateMainImage(this.querySelector('img').src, this)"
+              >
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAou7h8gsJMJlZKr3LkE5nVF5iVRw0h_x4HrhBUCh573GWXrSEhAB6W0vxdBU2guPcZ2DJaxnVgwj_wWleUqrdln3vg1gq2jn-NJlxkFrbC9iEJ4HVMdWLv4npbM2XmEnL2mEcPXQ7VAT8kcHez58J_mOWQHJxfr-XauwV37OkqwPhDtmUhnciqTMCcaZDDd4pME3wjPuPe6D8-RYeexxCb719MrUE501SUL5trgEs6RSgnJVWOVQV8vzg8f1HxQcegIZXUy-zO_Lcc"
+                  alt="Thumbnail 2"
+                />
+              </button>
+              <button
+                class="product-gallery-thumb"
+                onclick="updateMainImage(this.querySelector('img').src, this)"
+              >
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcy5HxHy-0dHeZRsfsCmWqKrAIt20KZ3y4H6-7MNuqtooGIxOlIDf8LsqdO0BjsFmNM3CWIMsyi44FYH6qKvsxuMyA1BjIhTrwihUE4ZPNZjgEgr4mD3-vtqRtYuxi4u1dx9FHgM_U7BoGKpcV7FTCzCtizuQ93VVZb8lEQE722TpfXSHqiHyIlNLfuNZNU4JA5tNy5L0i5eYnoXE1MlQ-ln_VVdGc_V0uF5ugHxQJbcOXceDw5SoqL_6-S7K93WXbyx0fzRtQp6YP"
+                  alt="Thumbnail 3"
+                />
+              </button>
+              <button
+                class="product-gallery-thumb"
+                onclick="updateMainImage(this.querySelector('img').src, this)"
+              >
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAw640OWLpzU3_tIUM57QHZBqmRAU7dX2OsG1eFMD1QRYPp2k_Bypalat-3PTJVdLOtcQwmiGQgsXDZP7MKMp7lVo76wN35rFmxqYVoXzjmvOQZ3PrrIog2lLQSEueCMyuWY9kWedh7a2lUVHhUrB7ZvWdKFcMK1jOFX-O03UreJrw0uItOdFkTjE0Ynws63ixX8xpg9V1NHUv3x1Aa_d4t-rPejeg0yomgm9LGZPktnpH058Z36MtQN1UaH4EtvEdnbmAlrneNzvtU"
+                  alt="Thumbnail 4"
+                />
+              </button>
+            </div>
+          </div>
+
+          <!-- Content Column -->
+          <div class="content-col">
+            <div class="badge-wrap">
+              <span class="badge">Heritage Series</span>
+              <h1 class="product-title">Traditional Terracotta Odu</h1>
+            </div>
+            <p class="product-desc">
+              A masterpiece of architectural endurance, the Odu tile represents
+              centuries of refined craftsmanship. Formed from high-density
+              natural clay and kiln-fired at peak temperatures, it offers a
+              timeless aesthetic that bridges the gap between historical
+              heritage and contemporary precision.
+            </p>
+            <div class="variants-section">
+              <p class="variants-label">Available Variants</p>
+              <div class="variants-swatches">
+                <div class="swatch-wrap">
+                  <div class="swatch swatch-classic"></div>
+                  <span class="swatch-label">Classic Red</span>
+                </div>
+                <div class="swatch-wrap">
+                  <div class="swatch swatch-earthy"></div>
+                  <span class="swatch-label">Earthy Brown</span>
+                </div>
+                <div class="swatch-wrap">
+                  <div class="swatch swatch-charcoal"></div>
+                  <span class="swatch-label">Charcoal Gray</span>
+                </div>
+                <div class="swatch-wrap">
+                  <div class="swatch swatch-sand"></div>
+                  <span class="swatch-label">Sandstone Beige</span>
+                </div>
+              </div>
+            </div>
+            <div class="cta-group">
+              <button class="btn-primary-full">
+                <span class="material-symbols-outlined">request_quote</span>
+                Request Quote
+              </button>
+              <button class="btn-outline-full">
+                <span class="material-symbols-outlined">download</span>
+                Download Technical Data Sheet (PDF)
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SPECS & BENEFITS ===== -->
+      <section class="specs-section">
+        <div class="container">
+          <div class="specs-grid">
+            <!-- Specs Table -->
+            <div>
+              <h2 class="section-title">
+                Technical Specifications
+              </h2>
+              <div class="specs-table-wrap">
+                <table>
+                  <tbody>
+                    <tr>
+                      <th>Dimensions</th>
+                      <td>420 x 330 mm</td>
+                    </tr>
+                    <tr>
+                      <th>Weight per unit</th>
+                      <td>4.2 kg</td>
+                    </tr>
+                    <tr>
+                      <th>Coverage</th>
+                      <td>10 tiles per sqm</td>
+                    </tr>
+                    <tr>
+                      <th>Water Absorption</th>
+                      <td>&lt; 6%</td>
+                    </tr>
+                    <tr>
+                      <th>Bending Strength</th>
+                      <td>&gt; 1200 N</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Benefits -->
+            <div>
+              <h2 class="section-title">
+                <span
+                  class="material-symbols-outlined"
+                  style="font-variation-settings: &quot;opsz&quot; 32"
+                  >verified</span
+                >
+                Core Performance Benefits
+              </h2>
+              <div class="benefits-list">
+                <div class="benefit-item">
+                  <div class="benefit-icon">
+                    <span class="material-symbols-outlined">ac_unit</span>
+                  </div>
+                  <div>
+                    <h4 class="benefit-title">Natural Cooling</h4>
+                    <p class="benefit-desc">
+                      Exceptional thermal mass properties regulate indoor
+                      temperatures, significantly reducing reliance on HVAC
+                      systems in warm climates.
+                    </p>
+                  </div>
+                </div>
+                <div class="benefit-item">
+                  <div class="benefit-icon">
+                    <span class="material-symbols-outlined">palette</span>
+                  </div>
+                  <div>
+                    <h4 class="benefit-title">Color Permanence</h4>
+                    <p class="benefit-desc">
+                      Mineral-rich composition ensures that the rich terracotta
+                      hues are fused into the core, preventing fading even under
+                      intense UV exposure.
+                    </p>
+                  </div>
+                </div>
+                <div class="benefit-item">
+                  <div class="benefit-icon">
+                    <span class="material-symbols-outlined">air</span>
+                  </div>
+                  <div>
+                    <h4 class="benefit-title">Wind Resistance</h4>
+                    <p class="benefit-desc">
+                      The interlocking design is engineered to withstand
+                      hurricane-force winds, providing a secure and watertight
+                      seal for decades.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== INSTALLATION ===== -->
+      <section class="install-section">
+        <div class="install-card">
+          <div class="install-content">
+            <h2 class="install-title">Professional Installation</h2>
+            <p class="install-desc">
+              Proper installation is the foundation of structural integrity.
+              TerraRoof provides comprehensive guidelines for roofing
+              contractors, including underlayment specs, flashing details, and
+              ventilation requirements.
+            </p>
+            <ul class="install-list">
+              <li>
+                <span class="material-symbols-outlined">check_circle</span>
+                <span>Standard 20-degree minimum pitch recommended.</span>
+              </li>
+              <li>
+                <span class="material-symbols-outlined">check_circle</span>
+                <span
+                  >On-site engineering support available for large commercial
+                  projects.</span
+                >
+              </li>
+              <li>
+                <span class="material-symbols-outlined">check_circle</span>
+                <span
+                  >Certified Installer Program for guaranteed long-term
+                  warranties.</span
+                >
+              </li>
+            </ul>
+            <button class="btn-dark">View Installation Guide</button>
+          </div>
+          <div class="install-image">
+            <img
+              src="https://images.unsplash.com/photo-1518736346281-76873166a64a?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cm9vZnxlbnwwfHwwfHx8MA%3D%3D"
+              alt="Installation in progress"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== RELATED PRODUCTS ===== -->
+      <section class="related-section">
+        <div class="container">
+          <div class="related-header">
+            <div>
+              <h2>Explore Other Profiles</h2>
+              <p>Complementary styles for diverse architectural needs.</p>
+            </div>
+          </div>
+          <div class="products-grid">
+            <div class="product-card">
+              <div class="card-image-wrap">
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0mkCjNFhxy-muPJzj6eXNd0tE-ju7t3dlae0xNeFh-6xiuzz4SEPg-pVYvLkTsh71s2iDxbzrDzOud8srIVpmi1Ah0ZnRo7S-4XdXt5I5EBgscegwXR0enADzfFQES2u_OldnY-Ft1n3Jdp3luEGDFw9QNMqbe7twUNmfLFhHt1pJrEjGKc1vynUz8qi3wjpDwqoT9-Deolh4Pni9RusUuij3bCTanikODxPfkAB4fvK4PHj8MF3Kr8RagDJoIK7STbuU5y8I2K1A"
+                  alt="Nordic Slate"
+                />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title">Nordic Slate</h3>
+                <p class="card-desc">
+                  Ultra-flat profile with a contemporary dark finish, perfect
+                  for minimalist designs.
+                </p>
+                <a href="#" class="card-link"
+                  >View Details
+                  <span class="material-symbols-outlined"
+                    >arrow_forward</span
+                  ></a
+                >
+              </div>
+            </div>
+
+            <div class="product-card">
+              <div class="card-image-wrap">
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCl5drMj33pGR1IMnyyi6deigLMDIgGolScgS-uJcYqP6fQR4snYO4oxzHMdHwnJzEtuAvn2YFp0DDYYlMUEpBfo60M7IREh0of96Psx4-N4XHmzjojNwxYIKkKN_jkGf9ynxnSeUOy8Ls21ykq7UIPOofmeTX5qFP4SwC1CsGWHvnh3ig7J-e6UHfDkBIr8L5zNiFvC54WFJtgAoO__kuNSb9YYmFDJwLa5_Q9jf9fKFwStUQXnVlSO9Stis6LFzprLZe1RJFmbK88"
+                  alt="Mediterranean Barrel"
+                />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title">Mediterranean Barrel</h3>
+                <p class="card-desc">
+                  Classic semi-cylindrical shape with high-profile curves for
+                  dramatic light and shadow.
+                </p>
+                <a href="#" class="card-link"
+                  >View Details
+                  <span class="material-symbols-outlined"
+                    >arrow_forward</span
+                  ></a
+                >
+              </div>
+            </div>
+
+            <div class="product-card">
+              <div class="card-image-wrap">
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJ3LwBnhu-VBYAMpTQ3qmeP--W5skyZEpS7oI-kF3ECijkSlEHVQfGga8ea3jZ20D0H8JCoB75Wj5cbJU6fe187Kh2o90WoIpOAaqCss3SIa4RmQ_LgFDS1oTtxGlq4pNDn8CfTiHxvR02KdaL7ORlVjVrayzeOnHNK428YE-BMmfDzBw5Zi3Ernn7LZHkF25A7Vu6NpRoVgMLE7TAU31p2a_FNjNW1_XSZomkZ44K2WQ3-SOXmDRST_S6bvF9LrCHLqr4Bx-3zUvu"
+                  alt="Glazed Avant-Garde"
+                />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title">Glazed Avant-Garde</h3>
+                <p class="card-desc">
+                  High-gloss finish with a wide spectrum of designer colors for
+                  signature architectural projects.
+                </p>
+                <a href="#" class="card-link"
+                  >View Details
+                  <span class="material-symbols-outlined"
+                    >arrow_forward</span
+                  ></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== INQUIRY FORM ===== -->
+      <section class="inquiry-section clay-texture" id="inquiry">
+        <div class="inquiry-inner">
+          <div class="inquiry-card">
+            <div class="inquiry-header">
+              <h2>Request a Detailed Quote</h2>
+              <p>
+                Our engineering team will provide a tailored estimate including
+                transport and installation logistics.
+              </p>
+            </div>
+            <form class="form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Full Name</label>
+                  <input type="text" placeholder="John Doe" />
+                </div>
+                <div class="form-group">
+                  <label>Email Address</label>
+                  <input type="email" placeholder="john@project.com" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Project Size (sqm)</label>
+                <input type="number" placeholder="e.g. 250" />
+              </div>
+              <div class="form-group">
+                <label>Message / Project Details</label>
+                <textarea
+                  rows="4"
+                  placeholder="Tell us about your project..."
+                ></textarea>
+              </div>
+              <button type="submit" class="btn-submit">Submit Inquiry</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== FOOTER ===== with exact same UI as reference image ===== -->
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="footer-logo">TerraRoof</span>
+          <p class="footer-tagline">
+            Pioneering architectural clay solutions since 1984. Engineered for
+            permanence, designed for elegance.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">SOLUTIONS</h4>
+          <nav class="footer-nav">
+            <a href="#">Residential</a>
+            <a href="#">Commercial</a>
+            <a href="#">Heritage Restoration</a>
+            <a href="#">Custom Glazing</a>
+          </nav>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">SUPPORT</h4>
+          <nav class="footer-nav">
+            <a href="#">Technical Datasheets</a>
+            <a href="#">Installation Guide</a>
+            <a href="#">Warranty Info</a>
+            <a href="#">Sustainability</a>
+          </nav>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">CONTACT</h4>
+          <p class="footer-contact-text">
+            1200 Industrial Parkway<br />Ceramics District, CA 90210
+          </p>
+          <p class="footer-contact-text">
+            contact@terraroof.com<br />+1 (800) CLAY-TEC
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-bottom-inner">
+          <p class="footer-copy">
+            © 2026 TERRAROOF Architectural Solutions. All rights reserved.
+          </p>
+          <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function updateMainImage(src, thumbEl) {
+        const mainImg = document.getElementById("main-image");
+        const thumbnails = document.querySelectorAll(".product-gallery-thumb");
+
+        mainImg.style.opacity = "0";
+        setTimeout(() => {
+          mainImg.src = src;
+          mainImg.style.opacity = "1";
+        }, 300);
+
+        thumbnails.forEach((t) => t.classList.remove("active"));
+        thumbEl.classList.add("active");
+      }
+
+      let lastScroll = 0;
+      const header = document.getElementById("site-header");
+      window.addEventListener("scroll", () => {
+        const currentScroll = window.pageYOffset;
+        if (currentScroll <= 0) {
+          header.classList.remove("hidden");
+          return;
+        }
+        if (currentScroll > lastScroll) {
+          header.classList.add("hidden");
+        } else {
+          header.classList.remove("hidden");
+        }
+        lastScroll = currentScroll;
+      });
+    </script>
+  </body>
+</html>
